@@ -24,7 +24,7 @@ source=("https://git.kernel.org/torvalds/t/${_srcname}.tar.gz"
         # standard config files for mkinitcpio ramdisk
         'linux.preset')
 
-sha256sums=('431c1aa80a6df79c33430a51d79caf6627a94317fba13f5ef80f34b5acb77877'
+sha256sums=('c29dcb48a0e77468c78dffe9b1edaa1c8e66f87083d4791a41b8ca06e35b4d1a'
             '48e0505438bb4ccc7a0e050a896122b490e8f1b1446aa3833841a9d4d7853d68'
             'fc606711a922638d5cc4358f47f69f554d9e6eab1cec91f0b49f00911f399722'
             'b830ce777543c0edd20a77d70f204c095f2429bb37151cd4a8c9dfae2af8d51a'
