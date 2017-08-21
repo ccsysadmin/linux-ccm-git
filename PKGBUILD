@@ -52,12 +52,12 @@ prepare() {
   # http://git.kernel.org/?p=linux/kernel/git/stable/stable-queue.git
 
   # https://bugzilla.kernel.org/show_bug.cgi?id=196547
-  patch -Np1 -i ../bonding-ratelimit-failed-speed-duplex-update-warning.patch
-  patch -Np1 -i ../bonding-require-speed-duplex-only-for-802.3ad-alb-an.patch
+  #patch -Np1 -i ../bonding-ratelimit-failed-speed-duplex-update-warning.patch
+  #patch -Np1 -i ../bonding-require-speed-duplex-only-for-802.3ad-alb-an.patch
 
   # https://github.com/google/sanitizers/issues/837
   # https://patchwork.kernel.org/patch/9886105/
-  patch -Np1 -i ../mm-Revert-x86_64-and-arm64-ELF_ET_DYN_BASE-base.patch
+  #patch -Np1 -i ../mm-Revert-x86_64-and-arm64-ELF_ET_DYN_BASE-base.patch
 
   cat "${srcdir}/config.${CARCH}" > ./.config
 
