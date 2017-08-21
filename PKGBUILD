@@ -5,15 +5,15 @@
 
 pkgbase=linux-CCM           # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_srcname=linux-4.13-rc5
-pkgver=4.13rc5
-pkgrel=2
+_srcname=linux-4.13-rc6
+pkgver=4.13rc6
+pkgrel=1
 arch=('i686' 'x86_64')
 url="https://www.kernel.org/"
 license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'libelf')
 options=('!strip')
-source=("https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/snapshot/${_srcname}.tar.gz"
+source=("https://git.kernel.org/torvalds/t/${_srcname}.tar.gz"
         'bonding-require-speed-duplex-only-for-802.3ad-alb-an.patch'
         'bonding-ratelimit-failed-speed-duplex-update-warning.patch'
         'mm-Revert-x86_64-and-arm64-ELF_ET_DYN_BASE-base.patch'
