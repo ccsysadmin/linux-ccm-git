@@ -5,18 +5,15 @@
 
 pkgbase=linux-CCM           # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_srcname=linux-4.13-rc6
-pkgver=4.13rc6
+_srcname=linux-4.13
+pkgver=4.13
 pkgrel=1
 arch=('i686' 'x86_64')
 url="https://www.kernel.org/"
 license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'libelf')
 options=('!strip')
-source=("https://git.kernel.org/torvalds/t/${_srcname}.tar.gz"
-        'bonding-require-speed-duplex-only-for-802.3ad-alb-an.patch'
-        'bonding-ratelimit-failed-speed-duplex-update-warning.patch'
-        'mm-Revert-x86_64-and-arm64-ELF_ET_DYN_BASE-base.patch'
+source=("https://cdn.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         # the main kernel config files
         'config.i686' 'config.x86_64'
         # pacman hook for initramfs regeneration
@@ -24,10 +21,7 @@ source=("https://git.kernel.org/torvalds/t/${_srcname}.tar.gz"
         # standard config files for mkinitcpio ramdisk
         'linux.preset')
 
-sha256sums=('c29dcb48a0e77468c78dffe9b1edaa1c8e66f87083d4791a41b8ca06e35b4d1a'
-            '48e0505438bb4ccc7a0e050a896122b490e8f1b1446aa3833841a9d4d7853d68'
-            'fc606711a922638d5cc4358f47f69f554d9e6eab1cec91f0b49f00911f399722'
-            'b830ce777543c0edd20a77d70f204c095f2429bb37151cd4a8c9dfae2af8d51a'
+sha256sums=('2db3d6066c3ad93eb25b973a3d2951e022a7e975ee2fa7cbe5bddf84d9a49a2c'
             'df55887a43dcbb6bd35fd2fb1ec841427b6ea827334c0880cbc256d4f042a7a1'
             'bf84528c592d1841bba0662242f0339a24a1de384c31f28248631e8be9446586'
             '834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0'
@@ -50,14 +44,6 @@ prepare() {
 
   # add latest fixes from stable queue, if needed
   # http://git.kernel.org/?p=linux/kernel/git/stable/stable-queue.git
-
-  # https://bugzilla.kernel.org/show_bug.cgi?id=196547
-  #patch -Np1 -i ../bonding-ratelimit-failed-speed-duplex-update-warning.patch
-  #patch -Np1 -i ../bonding-require-speed-duplex-only-for-802.3ad-alb-an.patch
-
-  # https://github.com/google/sanitizers/issues/837
-  # https://patchwork.kernel.org/patch/9886105/
-  #patch -Np1 -i ../mm-Revert-x86_64-and-arm64-ELF_ET_DYN_BASE-base.patch
 
   cat "${srcdir}/config.${CARCH}" > ./.config
 
