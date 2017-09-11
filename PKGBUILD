@@ -5,8 +5,8 @@
 
 pkgbase=linux-CCM           # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_srcname=linux-4.13
-pkgver=4.13
+_srcname=linux-4.13.1
+pkgver=4.13.1
 pkgrel=1
 arch=('i686' 'x86_64')
 url="https://www.kernel.org/"
@@ -21,7 +21,7 @@ source=("https://cdn.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         # standard config files for mkinitcpio ramdisk
         'linux.preset')
 
-sha256sums=('2db3d6066c3ad93eb25b973a3d2951e022a7e975ee2fa7cbe5bddf84d9a49a2c'
+sha256sums=('decee7a2de34aea921fce3e7934f520790fe43176de29bd9718a84419ca6e1ce'
             'df55887a43dcbb6bd35fd2fb1ec841427b6ea827334c0880cbc256d4f042a7a1'
             'bf84528c592d1841bba0662242f0339a24a1de384c31f28248631e8be9446586'
             '834bd254b56ab71d73f59b3221f056c72f559553c04718e350ab2a3e2991afe0'
